@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Second Reader · calibrated AI for a state arts agency</title>
+<meta name="description" content="A working demonstration of how a calibrated judgment model could sit beside the staff and panels of a state arts agency. Five rooms, live answers, every doubt shown.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <a class="brand" href="#home" aria-label="Second Reader home">
+    <svg viewBox="0 0 44 28" width="44" height="28" aria-hidden="true"><rect x="1" y="6" width="6" height="16" rx="1"/><rect x="10" y="2" width="6" height="24" rx="1" opacity=".75"/><rect x="19" y="9" width="6" height="10" rx="1" opacity=".5"/><rect x="28" y="4" width="6" height="20" rx="1" opacity=".3"/><rect x="37" y="11" width="6" height="6" rx="1" opacity=".16"/></svg>
+    <span>Second Reader</span>
+  </a>
+  <nav class="rooms" aria-label="Rooms">
+    <a href="#intake"><b>01</b> Intake</a>
+    <a href="#panel"><b>02</b> Panel</a>
+    <a href="#reports"><b>03</b> Reports</a>
+    <a href="#coach"><b>04</b> Coach</a>
+    <a href="#collection"><b>05</b> Collection</a>
+    <a href="#about">Disclosure</a>
+  </nav>
+  <button class="conn" id="connBtn" type="button" aria-haspopup="dialog"><i id="connDot"></i><span id="connLbl">Checking Jev</span></button>
+</header>
+
+<div class="demo-bar" role="note">Demonstration only. Not affiliated with or endorsed by the South Carolina Arts Commission. Sample applications and reports are fictional. <a href="#about">Full disclosure</a></div>
+
+<main id="main">
+
+<!-- ================= HOME ================= -->
+<section class="page" id="home" data-page>
+  <div class="hero">
+    <p class="kicker">A working demonstration for a state arts agency</p>
+    <h1>A second reader that says how sure it is.</h1>
+    <p class="lede">An arts agency reads for a living: applications against guidelines, narratives against rubrics, hundreds of final reports against the same handful of questions. A calibrated judgment model can take a first pass at that reading. It does not write and it does not decide. It answers a typed question and attaches a probability, so the uncertain cases go to a person.</p>
+    <div class="hero-side"><div class="coil" id="coil"></div><div class="hero-demo" id="heroDemo" aria-label="A live example"></div></div>
+  </div>
+
+  <h2 class="sec">How to use this site</h2>
+  <ol class="steps home-steps">
+    <li class="on"><span class="sn" aria-hidden="true">1</span><div><b>Pick a room</b><span>Each one is a job the agency already does. A room takes about two minutes. There is nothing to sign in to.</span></div></li>
+    <li class="on"><span class="sn" aria-hidden="true">2</span><div><b>Use the sample or write your own</b><span>Every room opens with a fictional document already loaded. You can edit it or replace it with invented text.</span></div></li>
+    <li class="on"><span class="sn" aria-hidden="true">3</span><div><b>Press the button, then read the doubt</b><span>Jev answers in a few seconds. Look at the percentages, not only the answer. The unsure ones are the point.</span></div></li>
+  </ol>
+
+  <h2 class="sec">Five rooms you can use</h2>
+  <div class="cards">
+    <a class="card" href="#intake" data-room="intake"><span class="n">01</span><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="6" width="30" height="36" rx="2"/><path d="M15 16l3 3 5-6M15 27l3 3 5-6M28 17h6M28 28h6"/></svg><h3>Intake desk</h3><p>Check an application against eight eligibility rules. Set how sure the model must be before a check skips a person.</p><span class="do">You: press one button, then move a dial.</span><span class="go">Open the desk</span></a>
+    <a class="card" href="#panel" data-room="panel"><span class="n">02</span><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40h36"/><rect x="9" y="24" width="6" height="16"/><rect x="21" y="10" width="6" height="30"/><rect x="33" y="18" width="6" height="22"/><circle cx="24" cy="6" r="2.5"/></svg><h3>Panel room</h3><p>Score an application on the rubric yourself, then reveal the model's read and see where the two of you split.</p><span class="do">You: score six criteria, then reveal.</span><span class="go">Take a seat</span></a>
+    <a class="card" href="#reports" data-room="reports"><span class="n">03</span><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="8" width="36" height="32" rx="2"/><path d="M6 18h36M6 29h36M19 8v32M31 8v32"/><circle cx="25" cy="23.5" r="2.4" class="f"/><circle cx="36.5" cy="34.5" r="2.4" class="f"/></svg><h3>Report room</h3><p>Ask the same questions of every final report at once and turn narratives into a table you can export.</p><span class="do">You: press one button, then open the unsure cells.</span><span class="go">Read the stack</span></a>
+    <a class="card" href="#coach" data-room="coach"><span class="n">04</span><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40h8v-8h8v-8h8v-8h8"/><path d="M12 22l14-14 4 4-14 14-5 1z"/></svg><h3>Applicant coach</h3><p>A first-time applicant tests a draft against the rubric and sees what the next band asks for.</p><span class="do">You: check a draft, revise it, check again.</span><span class="go">Try a draft</span></a>
+    <a class="card" href="#collection" data-room="collection"><span class="n">05</span><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="8" width="36" height="32" rx="2"/><rect x="16" y="16" width="16" height="14" stroke-dasharray="3 3"/><path d="M6 34l9-8 7 6 6-5 14 11"/></svg><h3>Collection desk</h3><p>Tag a photograph of traditional work, see where the model looked, and check an image description.</p><span class="do">You: pick a photo, write a description, tag it.</span><span class="go">Open a drawer</span></a>
+  </div>
+
+  <h2 class="sec">Where it stays out</h2>
+  <div class="rules">
+    <div><h3>Artistic merit</h3><p>Fellowships and work samples belong to peer panels. A probability on a poem is false precision, and nothing in these rooms scores art.</p></div>
+    <div><h3>Final decisions</h3><p>The model never declines, funds, or ranks. Every room ends with a person, and the uncertain cases are the ones it hands over first.</p></div>
+    <div><h3>Hidden use</h3><p>A public agency owes applicants disclosure, a named decision-maker, and a way to appeal. The rooms show what was asked and what came back.</p></div>
+    <div><h3>Polish over substance</h3><p>These models reward writing that sounds like the rubric. That can favor a hired grant writer over a small rural group, so splits get read by people.</p></div>
+  </div>
+  <p class="fine">Program details on this site come from the Commission's public pages, retrieved November 13, 2026. See <a href="#about">Disclosure</a> for sources.</p>
+</section>
+
+<!-- ================= ROOMS (rendered by app.js) ================= -->
+<section class="page" id="intake" data-page hidden></section>
+<section class="page" id="panel" data-page hidden></section>
+<section class="page" id="reports" data-page hidden></section>
+<section class="page" id="coach" data-page hidden></section>
+<section class="page" id="collection" data-page hidden></section>
+
+<!-- ================= DISCLOSURE ================= -->
+<section class="page" id="about" data-page hidden>
+  <p class="kicker">Disclosure</p>
+  <h1 class="room-h">What this is, who made it, and where your words go.</h1>
+  <div class="disc">
+    <article>
+      <h2>Who made this</h2>
+      <p>Second Reader was conceived and directed by <b>Marc Watkins</b>. It is an independent demonstration. It is <b>not affiliated with, commissioned by, or endorsed by the South Carolina Arts Commission</b>, and it is not a system the Commission uses.</p>
+      <h2>AI disclosure</h2>
+      <p>The site's design, code, and explanatory text were written with <b>Claude</b>, an AI system made by Anthropic, working from Marc Watkins's direction. Treat every claim here as a starting point to check, not as policy advice.</p>
+      <p>The judgments you see in the rooms come from <b>Jev</b>, a model made by TypeSafe AI, and are labeled as Jev's. Jev does not generate prose. It answers yes or no, multiple choice, and scale questions, returns a probability with each, and for images can return a box. Sage, from Levanto, is a similar kind of tool. Only Jev is connected here.</p>
+      <h2>What is fictional</h2>
+      <p>Every sample application, draft, and final report was <b>written by AI for this demonstration</b>. The organizations and people named in them do not exist. The counties are real. Nothing here describes a real applicant or grantee.</p>
+      <h2>What is real</h2>
+      <p>Grant names, eligibility rules, funding limits, and rubric criterion names and point ranges follow the Commission's published FY27 guidelines. The band descriptions under each criterion are <b>paraphrased</b> for this demo and are not the official wording. Read the official text at the source:</p>
+      <ul id="srcList"></ul>
+      <p>On November 3, 2026, the Commission paused applications for its rolling grant categories, including Art of Community: Rural SC. That category is used here only as a published example of rules and a rubric.</p>
+    </article>
+    <article>
+      <h2>Where your words go</h2>
+      <ol class="flow">
+        <li><b>Your browser.</b> Text you type and scores you give are saved only in this browser so a refresh does not lose them. There are no accounts and no analytics.</li>
+        <li><b>A small relay.</b> When you press a button that asks Jev, the document and the questions go to a Cloudflare Worker run by Marc Watkins. It holds the API key, stores nothing, and does not log the text.</li>
+        <li><b>TypeSafe AI.</b> The relay forwards the request to TypeSafe's API and returns the answer. TypeSafe's own terms govern what it keeps. This site cannot verify them for you.</li>
+      </ol>
+      <p class="warn"><b>Do not paste real applications, personal information, or anything confidential.</b> Use the samples or invented text. If an agency adopted a tool like this, it would need its own agreement with the vendor, a records policy, and legal review.</p>
+      <p>Fonts load from Google Fonts and sample photographs load from Wikimedia Commons, so those services see a request from your browser.</p>
+      <p><button class="btn ghost" id="clearBtn" type="button">Clear everything saved in this browser</button> <span id="clearMsg" role="status"></span></p>
+      <h2>Known limits</h2>
+      <ul>
+        <li>A probability is the model's confidence, not the chance it is right about your case. It can be confidently wrong.</li>
+        <li>Documents are limited to about 6,000 characters and eight questions per request. The relay allows 60 requests a minute.</li>
+        <li>Image and box features are marked experimental by the vendor and may change.</li>
+        <li>No one has tested these questions for bias against real applications. That test would come before any real use.</li>
+      </ul>
+      <h2>Image credits</h2>
+      <ul id="imgCredits" class="credits"></ul>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <p><b>Second Reader</b> by Marc Watkins. Built with Claude, an AI system from Anthropic. Judgments by Jev from TypeSafe AI. Independent demonstration, not affiliated with the South Carolina Arts Commission. Samples are fictional. <a href="#about">Full disclosure</a></p>
+  <p id="usage" class="usage" role="status"></p>
+</footer>
+
+<dialog id="connDlg" aria-labelledby="connH">
+  <form method="dialog">
+    <h2 id="connH">Connection</h2>
+    <p>Requests go to a relay that holds the Jev key. Leave this blank to use the standard relay.</p>
+    <label for="epIn">Relay address</label>
+    <input id="epIn" type="url" placeholder="https://jev-sandbox-proxy.watkins-um.workers.dev">
+    <p id="connMsg" role="status"></p>
+    <div class="row"><button class="btn" value="save" id="epSave">Save and test</button><button class="btn ghost" value="cancel">Close</button></div>
+  </form>
+</dialog>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
